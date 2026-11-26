@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Dark is the default theme; [data-theme="light"] overrides it. */
+:root {
+  --bg: #0d0c0c;
+  --surface: #141213;
+  --card: #110f10;
+  --cover: #1c1416;
+  --line: #2a2526;
+  --ink: #f2ede6;
+  --muted: #a8a29a;
+  --gold: #d4b06a;
+  --on-gold: #1a1514;
+  --accent: #c9a45c;
+  --quote: #d4b06a;
+  --shadow: #2a1418;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: #faf7f2;
+  --surface: #f3ebe0;
+  --card: #ffffff;
+  --cover: #1c1416;
+  --line: #e6ddd0;
+  --ink: #1a1514;
+  --muted: #5a524c;
+  --gold: #8a6420;
+  --on-gold: #ffffff;
+  --accent: #8a6420;
+  --quote: #8b2a2a;
+  --shadow: #ddcfbd;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-jacket: var(--cover);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-on-gold: var(--on-gold);
+  --color-accent: var(--accent);
+  --color-quote: var(--quote);
+  --color-shadow: var(--shadow);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Theme toggle shows the icon for the theme you would switch to. */
+[data-theme="light"] .icon-sun,
+:root:not([data-theme="light"]) .icon-moon {
+  display: none;
+}
